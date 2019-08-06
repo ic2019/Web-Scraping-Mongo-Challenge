@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+  <div class="container-fluid bg-light">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p>Want to learn more?</p>
+      
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data!</a></p>
+    </div>
+    <div class="container grad">
+    <!--First row-->
+    <div class="container row bg-light">
+        <div class="col">
+            <h3>Latest Mars News</h3>
+            <p><strong>{{ mars.news_title }}</strong></p>
+            <p>{{ mars.news_p }}</p>
+            <br>
+            <h3>Featured Mars Image</h3>
+            <img src="{{ mars.featured_image_url }}" alt="featured_mars_iamge">
+
+        </div>
+        <div class="col">
+                <div class="card w-100">
+                        <div class="card-body">
+                          <h4 class="card-title">Current Weather on Mars</h3>
+                          <p class="card-text">{{ mars.mars_weather }}</p>
+                          
+                        </div>
+                </div>
+                </br>
+                <div class="card w-150">
+                        <div class="card-body">
+                          <h5 class="card-title">Mars facts</h5>
+                          <!---Beginning of table-->
+                          <table class="table-responsive table-lg table-striped table-bordered" style="border: 1px solid black;">
+                                <thead class="thead-light">
+                                  <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col">Value</th>
+
+                                  </tr>
+                                  <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col"></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                        {% for k,v in mars.mars_facts.items() %}
+                                        <tr>
+                                          <th scope="row"></th>
+                                          <td>{{ k }}</td>
+                                          <td>{{ v.value }} </td>
+      
+                                        </tr>
+                                      {% endfor %}
+                                </tbody>
+                              </table>
+
+                          <!---End of table-->
+                        </div>
+                        
+                          
+                        </div>
+                </div>
+        </div>
+    </div>
+    </br>
+    <!-- End of 1st row-->
+    <!--Starting 2nd row-->
+    <div class="container">
+      <div class="row">
+          <div class="col-sm-12 card text-center">
+              <div class="card-body">
+                <h3 class="card-title">Mars Hemispheres</h3>
+              </div>
+            </div>
+      </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            
+                    {% set ctr = 1 %}
+                    {% for image in mars.hemisphere_image_urls %}
+                    {% if ctr % 3 == 0 %}
+                       <div class="row">
+                            <div class="col-sm-6">
+                                    <figure class="figure">
+                                            <img src={{ image.img_url }} class="figure-img img-fluid rounded" alt="...">
+                                    <figcaption class="figure-caption">{{ image.title }}</figcaption>
+
+                            </div>
+                       </div>
+
+                    {% else %}
+                        <div class="col-sm-6">
+                            <figure class="figure">
+                                <img src={{ image.img_url }} class="figure-img img-fluid rounded" alt="...">
+                                <figcaption class="figure-caption font-weight-bold">{{ image.title }}</figcaption>
+                            </figure>
+                        </div>
+                    {% endif %}
+                    {% set ctr = ctr + 1 %}
+                    {% endfor %}
+
+        </div>
+
+    </div>
+
+ 
+  </div>
+    <!--End of 2nd row-->
+</div>
+</body>
+
+</html>
+© 2019 GitHub, Inc.
