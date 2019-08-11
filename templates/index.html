@@ -16,7 +16,7 @@
   <div class="container-fluid bg-light">
     <div class="jumbotron text-center">
       <h1>Mission to Mars</h1>
-      <p>Want to learn more?</p>
+      <p class="text-danger"><h3><marquee class="text-danger">Mankind's next frontier!!!</marquee></h3></p>
       
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data!</a></p>
     </div>
@@ -26,12 +26,13 @@
         <div class="col">
             <h3>Latest Mars News</h3>
             <p><strong>{{ mars.news_title }}</strong></p>
-            <p>{{ mars.news_p }}</p>
+            <p class="overflow-auto"><h4><marquee direction="left">{{ mars.news_p }}</marquee></h4></p>
             <br>
             <h3>Featured Mars Image</h3>
             <img src="{{ mars.featured_image_url }}" alt="featured_mars_iamge">
 
         </div>
+      
         <div class="col">
                 <div class="card w-100">
                         <div class="card-body">
@@ -45,7 +46,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Mars facts</h5>
                           <!---Beginning of table-->
-                          <table class="table-responsive table-lg table-striped table-bordered" style="border: 1px solid black;">
+                          <table class="table-responsive table-lg table-striped table-bordered border border-dark" style="border: 1px solid black;">
                                 <thead class="thead-light">
                                   <tr>
                                     <th scope="col"></th>
@@ -60,6 +61,7 @@
                                   </tr>
                                 </thead>
                                 <tbody>
+                                        {% if mars.mars_facts %}
                                         {% for k,v in mars.mars_facts.items() %}
                                         <tr>
                                           <th scope="row"></th>
@@ -68,6 +70,7 @@
       
                                         </tr>
                                       {% endfor %}
+                                      {% endif %}
                                 </tbody>
                               </table>
 
@@ -110,7 +113,7 @@
                         <div class="col-sm-6">
                             <figure class="figure">
                                 <img src={{ image.img_url }} class="figure-img img-fluid rounded" alt="...">
-                                <figcaption class="figure-caption font-weight-bold">{{ image.title }}</figcaption>
+                                <figcaption class="figure-caption font-weight-bold ">{{ image.title }}</figcaption>
                             </figure>
                         </div>
                     {% endif %}
