@@ -1,4 +1,4 @@
-    
+# Import all dependencies    
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
@@ -7,20 +7,42 @@ import time
 import json
 
 # Defining functions to instantiate webdriver, opening browser and closing browser.
+# Defining functions to instantiate webdriver, opening browser and closing browser.
 
 def init_browser():
+    """
+    Function to create an instance of Chrome webdriver class object.
+    Parameters: None
+    Return: browser object
+    """
     # Import Splinter and set the chromedriver path
     executable_path = {"executable_path": "chromedriver.exe"}
     browser = Browser("chrome", **executable_path, headless=False)
     return browser
 
 def open_browser(browser, url):
+    """
+    Function to open the url using the browser instance of Chrome webdriver class object.
+    Parameters: browser object and url of the web page.
+    Return: None
+    """
     browser.visit(url)
 
 def close_browser(browser):
+    """
+    Function to close the webpage opened using chromedriver object.
+    Parameters: browser object
+    Return: None
+    """
     browser.quit()
 
 def scrape_info():
+    """
+    Function to scrape mars related facts from web pages
+    Parameters: None
+    Return:  A dictionary object
+    """
+
     # Collecting Nasa Mars news
     # Visit the Nasa URL
     url = "https://mars.nasa.gov/news/"
