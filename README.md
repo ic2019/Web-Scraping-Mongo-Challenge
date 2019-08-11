@@ -36,6 +36,10 @@ Following wesites were scraped to complete this project.
 
 MongoDB with Flask templating was used to create a new HTML page that displays all of the information that was scraped from the URLs.above.
 
+![before](Images/before-scraping)
+
+After scraping is completed.
+
 ![part1.png](Images/part1.png)
 ![part2.png](Images/part2.png)
 

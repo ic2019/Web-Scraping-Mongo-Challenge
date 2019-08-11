@@ -29,8 +29,9 @@
             <p class="overflow-auto"><h4><marquee direction="left">{{ mars.news_p }}</marquee></h4></p>
             <br>
             <h3>Featured Mars Image</h3>
+            {% if mars.featured_image_url %}
             <img src="{{ mars.featured_image_url }}" alt="featured_mars_iamge">
-
+            {% endif %}
         </div>
       
         <div class="col">
