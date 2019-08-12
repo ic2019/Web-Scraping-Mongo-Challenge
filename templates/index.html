@@ -26,7 +26,7 @@
         <div class="col">
             <h3>Latest Mars News</h3>
             <p><strong>{{ mars.news_title }}</strong></p>
-            <p class="overflow-auto"><h4><marquee direction="left">{{ mars.news_p }}</marquee></h4></p>
+            <p class="overflow-auto">{{ mars.news_p }}</p>
             <br>
             <h3>Featured Mars Image</h3>
             {% if mars.featured_image_url %}
@@ -129,7 +129,27 @@
   </div>
     <!--End of 2nd row-->
 </div>
+    <!---Beginning of footer-->
+    <div class="container-fluid bg-light" id="footer">
+      <!-- Footer Links -->
+    </br>
+
+
+    <div class="footer">
+            <p class="text-center text-dark blockquote-footer">From <a href="https://mars.nasa.gov/news/" alt="NASA Mars News Site">NASA Mars News Site</a> </p>
+            <p class="text-center text-dark blockquote-footer">From <a href="https://www.jpl.nasa.gov/spaceimages/" alt="Featured Image">JPL Featured Space Image</a> </p>
+            <p class="text-center text-dark blockquote-footer">From <a href="https://twitter.com/marswxreport" alt="Mars Weather">Mars Weather</a></p>
+            <p class="text-center text-dark blockquote-footer">From <a href="https://space-facts.com/mars/" alt="Mars Facts">Mars Facts</a></p>
+            <p class="text-center text-dark blockquote-footer">From <a href="https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars" alt="Mars Hemispheres">Mars Hemispheres</a></p>
+    </div>
+          
+
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>
-© 2019 GitHub, Inc.

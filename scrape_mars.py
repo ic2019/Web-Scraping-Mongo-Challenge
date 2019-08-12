@@ -157,7 +157,7 @@ def scrape_info():
                 browser.back()
                 time.sleep(10)
             close_browser(browser)
-    except:
+    except Exception as e:
         print(f"Error ocurred. Check your network connection! {e}")
 
     #print(hemisphere_image_urls)
