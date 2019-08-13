@@ -75,8 +75,10 @@ def scrape_info():
 
         html = browser.html
         soup = BeautifulSoup(html, 'html.parser')
-        imgs = soup.find('div', { 'class': 'image_and_description_container'}).find('div', {'class' : 'img'}).find_all('img')
-        relative_image_url = imgs[0]["src"]
+        #imgs = soup.find('div', { 'class': 'image_and_description_container'}).find('div', {'class' : 'img'}).find_all('img')
+        #relative_image_url = imgs[0]["src"]
+        imgs = soup.find('ul', { 'class': 'articles'}).find('li', {'class' : 'slide'}).find('a')["data-fancybox-href"]
+        relative_image_url = imgs
         featured_image_url = "https://www.jpl.nasa.gov"+relative_image_url
         #print(f" { featured_image_url}")
         close_browser(browser)

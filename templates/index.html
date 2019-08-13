@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <div class="container-fluid bg-light">
+  <div class="container-fluid bg-light font-weight-bold">
     <div class="jumbotron text-center">
       <h1>Mission to Mars</h1>
       <p class="text-danger"><h3><marquee class="text-danger">Mankind's next frontier!!!</marquee></h3></p>
@@ -22,19 +22,34 @@
     </div>
     <div class="container grad">
     <!--First row-->
-    <div class="container row bg-light">
-        <div class="col">
-            <h3>Latest Mars News</h3>
-            <p><strong>{{ mars.news_title }}</strong></p>
-            <p class="overflow-auto">{{ mars.news_p }}</p>
-            <br>
-            <h3>Featured Mars Image</h3>
-            {% if mars.featured_image_url %}
-            <img src="{{ mars.featured_image_url }}" alt="featured_mars_iamge">
-            {% endif %}
-        </div>
+    <div class="container">
+
+            <div class="col-lg-12">
+                <div class="row">
+                    <h3>Latest Mars News</h3>
+                    <br>
+             <div class="card">
+                <p><strong>{{ mars.news_title }}</strong></p>
+                <br>
+                <p>{{ mars.news_p }}</p>
+             </div>
+            </div>
+          </div>
+    </div>
+      <!---2nd row-->
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-7">     
+              <br>
+              <h3>Featured Mars Image</h3>
+              <div class="card">
+                   {% if mars.featured_image_url %}
+                    <img style="width:610px; height:600px;" src="{{ mars.featured_image_url }}" alt="featured_mars_iamge">
+                   {% endif %}
+              </div>
+           </div>
       
-        <div class="col">
+        <div class="col-lg-5">
                 <div class="card w-100">
                         <div class="card-body">
                           <h4 class="card-title">Current Weather on Mars</h3>
@@ -43,7 +58,7 @@
                         </div>
                 </div>
                 </br>
-                <div class="card w-150">
+                <div class="card w-100">
                         <div class="card-body">
                           <h5 class="card-title">Mars facts</h5>
                           <!---Beginning of table-->
@@ -79,13 +94,13 @@
                         </div>
                         
                           
-                        </div>
+                      </div>
                 </div>
         </div>
     </div>
     </br>
-    <!-- End of 1st row-->
-    <!--Starting 2nd row-->
+    <!-- End of 2nd row-->
+    <!--Starting 3rd row-->
     <div class="container">
       <div class="row">
           <div class="col-sm-12 card text-center">
